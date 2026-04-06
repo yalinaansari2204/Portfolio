@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IoT Energy Optimisation | Smart Factory Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #080f1e;
+      --surface: #111827;
+      --card: #172033;
+      --text: #e2e8f0;
+      --muted: #b7c4d9;
+      --accent: #60a5fa;
+      --ok: #34d399;
+      --warn: #fbbf24;
+      --risk: #f87171;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Poppins", sans-serif; background: linear-gradient(180deg, #070d18, var(--bg)); color: var(--text); }
+    .container { width: min(1080px, 92%); margin: 0 auto; }
+    .topbar { padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .topbar a { color: var(--accent); text-decoration: none; }
+    .hero { padding: 2rem 0; }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1rem; }
+    .panel { background: var(--surface); border: 1px solid rgba(255,255,255,.09); border-radius: 14px; padding: 1rem; }
+    .badge { display: inline-block; border-radius: 999px; padding: .35rem .75rem; font-size: .82rem; background: rgba(96,165,250,.15); border: 1px solid rgba(96,165,250,.45); color: #dbeafe; }
+    h1 { margin: .8rem 0 .55rem; font-size: clamp(1.45rem, 4.2vw, 2.45rem); }
+    p { margin: 0 0 .72rem; color: var(--muted); line-height: 1.6; }
+    .chips { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .75rem; }
+    .chips span { font-size: .82rem; background: rgba(255,255,255,.06); border-radius: 999px; padding: .35rem .65rem; color: #dbeafe; }
+    .preview { width: 100%; border-radius: 10px; border: 1px solid rgba(255,255,255,.11); }
+    .section { padding-bottom: 1.2rem; }
+    .grid { display: grid; gap: .9rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: .95rem; }
+    .card h3 { margin: .1rem 0 .45rem; font-size: 1rem; }
+    .kpi { display: grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap: .65rem; margin-top: .8rem; }
+    .kpi article { background: #0f172a; border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: .75rem; }
+    .kpi strong { display: block; font-size: 1.1rem; color: #f8fafc; }
+    .meter { margin-top: .5rem; height: 12px; background: #1f2937; border-radius: 999px; overflow: hidden; }
+    .bar-ok { height: 100%; width: 72%; background: linear-gradient(90deg, #059669, #34d399); }
+    .bar-warn { height: 100%; width: 46%; background: linear-gradient(90deg, #b45309, #fbbf24); }
+    .bar-risk { height: 100%; width: 19%; background: linear-gradient(90deg, #b91c1c, #f87171); }
+    .legend { display: flex; gap: .7rem; flex-wrap: wrap; margin-top: .7rem; font-size: .85rem; color: #d1d5db; }
+    .dot { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; margin-right: .35rem; }
+    .dot-ok { background: var(--ok); }
+    .dot-warn { background: var(--warn); }
+    .dot-risk { background: var(--risk); }
+    @media (max-width: 860px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .kpi { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container"><a href="index.html">Back to Portfolio</a></div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="panel">
+          <span class="badge">Live Project Sample Page</span>
+          <h1>IoT Energy Optimisation System</h1>
+          <p>
+            The IoT Energy Optimisation System is designed for industrial environments
+            where high energy usage, peak-hour spikes, and invisible machine losses
+            can significantly increase operational costs. This concept demonstrates
+            how sensor-driven monitoring, analytics, and alert-based action can make
+            energy decisions proactive instead of reactive.
+          </p>
+          <div class="chips">
+            <span>Industrial IoT</span>
+            <span>Energy Analytics</span>
+            <span>Automated Alerts</span>
+          </div>
+          <section class="kpi">
+            <article><strong>91%</strong><p>Sensor uptime</p></article>
+            <article><strong>18%</strong><p>Peak reduction</p></article>
+            <article><strong>24/7</strong><p>Live tracking</p></article>
+            <article><strong>12</strong><p>Monitored units</p></article>
+          </section>
+        </div>
+        <div class="panel">
+          <img class="preview" src="iot-energy-genuine.png" alt="IoT energy platform preview" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid">
+        <article class="card">
+          <h3>Collection Layer</h3>
+          <p>Machine-level sensors capture load, runtime, and temperature data streams.</p>
+        </article>
+        <article class="card">
+          <h3>Analytics Layer</h3>
+          <p>Rule engine flags anomalies and highlights unusual energy usage patterns.</p>
+        </article>
+        <article class="card">
+          <h3>Operator Dashboard</h3>
+          <p>Production managers review shifts, compare units, and trigger maintenance tickets.</p>
+        </article>
+        <article class="card">
+          <h3>Action Workflow</h3>
+          <p>Alerts are routed by severity for quick intervention and measurable savings.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Expanded Project Description</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Objective</h3>
+          <p>
+            Build an industry-ready framework that continuously monitors energy use
+            at machine and line level, identifies avoidable consumption patterns,
+            and supports data-backed optimization strategies.
+          </p>
+        </article>
+        <article class="card">
+          <h3>System Approach</h3>
+          <p>
+            Smart meters and IoT sensors collect runtime and load data from equipment.
+            The analytics layer compares actual usage against baseline behavior and
+            flags abnormalities such as idle-time draw, peak overload, or unstable cycles.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Industrial Impact</h3>
+          <p>
+            With dashboard visibility and priority alerts, plant teams can schedule
+            maintenance earlier, rebalance usage during peak windows, and reduce
+            waste. The expected outcomes include lower energy cost per unit,
+            improved process efficiency, and stronger sustainability compliance.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Current Energy Health</h2>
+      <div class="card">
+        <p>Efficiency score by alert category for monitored units this week:</p>
+        <div class="meter"><div class="bar-ok"></div></div>
+        <div class="meter"><div class="bar-warn"></div></div>
+        <div class="meter"><div class="bar-risk"></div></div>
+        <div class="legend">
+          <span><i class="dot dot-ok"></i>Optimized usage</span>
+          <span><i class="dot dot-warn"></i>Needs attention</span>
+          <span><i class="dot dot-risk"></i>Critical inefficiency</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
